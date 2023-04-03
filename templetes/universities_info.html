@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		table,tr{
+			border: 2px solid;
+			text-align: center;		
+		}
+		 h1{
+		 	color: ;
+		 	left: 10px;
+		 	
+		 	text-align: center;
+		 }
+		 td{
+		 	border: 1px solid ;
+			text-align: center;
+			text-align: center;
+			}
+			.div1{
+				position: absolute;
+				top: 15%;
+  				left: 10%;
+  				
+			}
+			.myDiv{
+				position: absolute;
+ 				top: 15%;
+  				left: 55%;
+  				width: 500px;
+  				height: 500px;
+			}
+			body{
+				background-color: ;
+			}
+
+	</style>
+	<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body>
+	<h1>Country Information</h1>
+<div class="div1">
+	<h1>Country Details</h1>
+<table>
+	<tr>
+		<th>Country Name IS :</th><td>{{name_of_con}}</td>
+	</tr>
+	<tr>
+		<th>Continents IS :</th><td>{{continents}}</td>
+	</tr>
+	<tr>
+		<th>Independent IS :</th><td>{{independent}}</td>
+	</tr>
+	<tr>
+		<th>Status IS :</th><td>{{status}}</td>
+	</tr>
+	<tr>
+		<th>Currencies IS :</th><td>{{currencies}}</td>
+	</tr>
+	<tr>
+		<th>Capital IS :</th><td>{{capital}}</td>
+	</tr>
+	<tr>
+		<th>Region IS :</th><td>{{region}}</td>
+	</tr>
+	<tr>
+		<th>Languages IS :</th><td>{{languages}}</td>
+	</tr>
+	<tr>
+		<th>Area IS :</th><td>{{area}}</td>
+	</tr>
+	<tr>
+		<th>Flag IS :</th><td><img src={{flag}}></td>
+	</tr>
+</table>
+</div>
+<div class="myDiv">
+<h1>Population Visualization</h1>
+<div  id='myDiv'>
+	<!-- Plotly chart will be drawn inside this DIV -->	
+</div>
+</div>
+<script type="text/javascript">
+	var data = [
+  {
+    x: {{top_pop_names | safe}},
+    y: {{top_pop_values}},
+    type: 'bar'
+  }
+];
+
+Plotly.newPlot('myDiv', data);
+
+</script>
+</body>
+</html>
